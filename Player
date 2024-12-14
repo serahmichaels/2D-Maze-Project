@@ -1,14 +1,20 @@
+/* Group 5: 2D Array Maze
+ * Serah Michaels
+ * December 13, 2024
+ * This class controls the player's movement and position through the maze. 
+*/
+
 package com.javamaze.maze;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Player {
-    //Group 5: Written by Serah Michaels
     private Maze.Point position;
     private Maze maze;
     private List<Maze.Point> path;
 
+    //constructors for a Player object
     public Player(Maze maze) {
         this.maze = maze;
         this.position = maze.getStart();
@@ -16,12 +22,15 @@ public class Player {
         path.add(position);
     }
 
+    // This method resets the player's position in the maze. 
     public void reset() {
         this.position = maze.getStart();
         this.path.clear();
         path.add(position);
     }
-
+    
+    
+//This method controls the character's movement through the maze. 
     public boolean move(char direction) {
         Maze.Point newPosition = new Maze.Point(position.getRow(), position.getCol());
         switch (direction) {
@@ -38,15 +47,18 @@ public class Player {
         }
         return false;
     }
-
+    
+    // This method displays the player's current position. 
     public Maze.Point getPosition() {
         return new Maze.Point(position.getRow(), position.getCol());
     }
-
+    
+    // This method lists the path that the player has taken. 
     public List<Maze.Point> getPath() {
         return path;
     }
-
+    
+    // This method checks if the player has reached the end of the maze. 
     public boolean hasReachedEnd() {
         return position.equals(maze.getEnd());
     }
