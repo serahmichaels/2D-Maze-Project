@@ -3,7 +3,7 @@ package com.javamaze.maze;
 import java.util.Random;
 
 public class Maze {
-    //Group 5: Written by Riley Ringer & Eric Reyes
+    //Group 5: Written by Riley Ringer
     private char[][] grid;
     private int rows, cols;
     private Point start, end;
